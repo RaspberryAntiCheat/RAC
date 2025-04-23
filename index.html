@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raspberry Anti-Cheat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f0f0f;
+      color: #f4f4f4;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 15, 15, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    header h1 {
+      font-size: 1.5rem;
+      color: #ff4da6;
+    }
+    .beta-badge {
+      background-color: #ff4da6;
+      color: #0f0f0f;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 0.8rem;
+      margin-left: 10px;
+    }
+    nav a {
+      margin-left: 30px;
+      color: #f4f4f4;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff4da6;
+    }
+    section {
+      padding: 100px 40px 120px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+    .hero {
+      background: linear-gradient(135deg, #1f1f1f, #292929);
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 3.2rem;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease-out both;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      animation: fadeInUp 1.5s ease-out both;
+      color: #ccc;
+    }
+    .tracker {
+      margin-top: 50px;
+      text-align: left;
+      font-size: 1.1rem;
+      color: #ccc;
+      line-height: 2;
+      animation: fadeInUp 2s ease-out both;
+    }
+    .tracker span {
+      color: #ff4da6;
+      font-weight: bold;
+    }
+    .feature {
+      background: #1a1a1a;
+      border-left: 4px solid #ff4da6;
+      margin: 20px 0;
+      padding: 25px;
+      width: 100%;
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeInUp 1.5s ease-out both;
+    }
+    .feature h3 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      color: #ff4da6;
+    }
+    .feature p {
+      color: #d0d0d0;
+    }
+    .extra-features ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .extra-features li {
+      margin: 10px 0;
+      font-size: 1rem;
+      color: #ccc;
+      position: relative;
+      padding-left: 20px;
+    }
+    .extra-features li::before {
+      content: '✔';
+      color: #ff4da6;
+      position: absolute;
+      left: 0;
+    }
+    .back-to-top {
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+      padding: 10px 20px;
+      background-color: #ff4da6;
+      color: #0f0f0f;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s;
+    }
+    .back-to-top:hover {
+      background-color: #e04396;
+    }
+    .dev-team {
+      margin-top: 60px;
+      text-align: center;
+    }
+    .dev-team h3 {
+      font-size: 1.6rem;
+      color: #ff4da6;
+      margin-bottom: 20px;
+    }
+    .dev-team p {
+      color: #ccc;
+      margin: 6px 0;
+    }
+    footer {
+      background: #0d0d0d;
+      padding: 60px 40px;
+      text-align: center;
+      font-size: 1rem;
+      color: #888;
+    }
+    footer p {
+      margin: 8px 0;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Raspberry Anti-Cheat <span class="beta-badge">BETA</span></h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#tech">Tech</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="about">
+    <h2>RAC: Protection Redefined</h2>
+    <p>Raspberry Anti-Cheat (RAC) is a powerful kernel-level system designed to eliminate cheaters at their core. With our proprietary driver <code>rac.sys</code> and intelligent DLL injection techniques, RAC guarantees unmatched security and fairness in competitive gaming.</p>
+    <div class="tracker">
+      <p><span>53</span> Different Kernel Drivers Detected</p>
+      <p><span>16</span> Differen Mouse Functions Blocked</p>
+      <p><span>104</span> Different Internal Modifications Stopped</p>
+      <p><span>66</span> Different Memory Read Functions Prevented</p>
+      <p><span>4</span> Different Hardware Modifications Prevented</p>
+    </div>
+    <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to Top</button>
+  </section>
+
+  <section id="features">
+    <div class="feature">
+      <h3>Kernel-Level Detection</h3>
+      <p>Unparalleled access to system processes enables RAC to catch even the most sophisticated threats before they start.</p>
+    </div>
+    <div class="feature">
+      <h3>DLL Injection & Reverse Engineering</h3>
+      <p>Multiple protection-layer DLLs are injected into your game, monitoring all code execution and actively reversing injected threats.</p>
+    </div>
+    <div class="feature">
+      <h3>Hardware Integrity Verification</h3>
+      <p>TPM 2.0, Secure Boot, HVCI, and virtualization support must be enabled, ensuring a hardened OS environment.</p>
+    </div>
+    <div class="feature">
+      <h3>Real-Time Updates</h3>
+      <p>Constantly updated detection modules from the cloud to ensure RAC is always steps ahead of malicious actors.</p>
+    </div>
+    <div class="feature">
+      <h3>Zero Trust Model</h3>
+      <p>Everything is logged, verified, and filtered through multiple validation layers. No assumptions. No compromises.</p>
+    </div>
+    <div class="extra-features">
+      <h3>Advanced Detection Methods</h3>
+      <ul>
+        <li>Memory signature scanning</li>
+        <li>Process and thread monitoring</li>
+        <li>Input spoofing detection</li>
+        <li>Driver signature validation</li>
+        <li>HWID-based bans</li>
+        <li>Heuristic and behavioral analysis</li>
+        <li>Ring 0 debug protection</li>
+        <li>Code virtualization integrity checks</li>
+      </ul>
+    </div>
+    <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to Top</button>
+  </section>
+
+  <section id="tech">
+    <div class="feature">
+      <h3>Tech Stack</h3>
+      <p>RAC is powered by a battle-tested C++ kernel driver, <code>rac.sys</code>. It’s optimized for minimal latency and easy integration into modern game engines.</p>
+    </div>
+    <div class="feature">
+      <h3>Security-First Architecture</h3>
+      <p>Multilayered protections including anti-debugging, encrypted communication channels, and live virtualization status checks make RAC nearly impossible to bypass.</p>
+      <p><strong>Note:</strong> Obfuscated code ≠ secure code. True security comes from structure, transparency, and hardening — not hiding.</p>
+    </div>
+    <div class="dev-team">
+      <h3>Developer Team</h3>
+      <p><strong>Team</strong> – Lead Kernel Developer</p>
+      <p><strong>StrezFN</strong> – DLL Engineering & Hooking</p>
+      <p><strong>dytxn</strong> – Optimisation</p>
+      <p><strong>Raspberry</strong> – Reverse Engineering & Security Research / Cheat and Exploit Detection</p>
+    </div>
+    <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to Top</button>
+  </section>
+  
+  <section id="contact">
+    <div class="feature">
+      <h3>Contact Us</h3>
+      <p>Want to integrate RAC or collaborate with us? Let’s talk.</p>
+      <p><strong>Discord:</strong> @raspberrynet</p>
+    </div>
+    <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to Top</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Raspberry Anti-Cheat. All rights reserved.</p>
+    <p>Secure. Advanced. Unstoppable. Choose RAC.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
